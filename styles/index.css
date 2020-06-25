@@ -1,17 +1,21 @@
 /* purgecss start ignore */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
-/* @import '@fortawesome/fontawesome-free/css/all.css'; */
 /* purgecss end ignore */
 @import 'tailwindcss/utilities';
 
 /* purgecss start ignore */
+html,
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 #nprogress {
   pointer-events: none;
 }
 
 #nprogress .bar {
-  background: #b794f4;
+  background: #5145cd;
   position: fixed;
   z-index: 1060;
   top: 0;
@@ -28,7 +32,7 @@
   right: 0px;
   width: 100px;
   height: 100%;
-  box-shadow: 0 0 10px #b794f4, 0 0 5px #b794f4;
+  box-shadow: 0 0 10px #5145cd, 0 0 5px #5145cd;
   opacity: 1;
 
   -webkit-transform: rotate(3deg) translate(0px, -4px);
@@ -51,8 +55,8 @@
   box-sizing: border-box;
 
   border: solid 2px transparent;
-  border-top-color: #b794f4;
-  border-left-color: #b794f4;
+  border-top-color: #5145cd;
+  border-left-color: #5145cd;
   border-radius: 50%;
 
   -webkit-animation: nprogress-spinner 400ms linear infinite;
@@ -85,31 +89,4 @@
     transform: rotate(360deg);
   }
 }
-
-.StripeElement {
-  height: 40px;
-  padding: 10px 12px;
-  width: 100%;
-  color: #32325d;
-  background-color: white;
-  border: 1px solid transparent;
-  border-radius: 4px;
-
-  box-shadow: 0 1px 3px 0 #e6ebf1;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
-}
-
-.StripeElement--focus {
-  box-shadow: 0 1px 3px 0 #cfd7df;
-}
-
-.StripeElement--invalid {
-  border-color: #fa755a;
-}
-
-.StripeElement--webkit-autofill {
-  background-color: #fefde5 !important;
-}
-
 /* purgecss end ignore */

@@ -1,8 +1,17 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-const { colors } = require('tailwindcss/defaultTheme');
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable global-require */
+/* eslint-disable import/no-extraneous-dependencies */
 
 // tailwind.config.js
 module.exports = {
+  plugins: [require('@tailwindcss/ui')],
+  purge: {
+    content: [
+      './pages/**/*.{js,jsx,ts,tsx}',
+      './components/**/*.{js,jsx,ts,tsx}',
+    ],
+    defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+  },
   theme: {
     screens: {
       sm: '640px',
@@ -10,35 +19,12 @@ module.exports = {
       lg: '1024px',
       xl: '1280px',
     },
-    fontFamily: {
-      display: ['Gilroy', 'sans-serif'],
-      body: ['Graphik', 'sans-serif'],
-    },
     borderWidth: {
       default: '1px',
       0: '0',
       2: '2px',
       4: '4px',
     },
-    extend: {
-      colors: {
-        blue: {
-          ...colors.blue,
-          300: '#5cbdd3',
-        },
-        orange: {
-          ...colors.orange,
-          500: '#f66900',
-        },
-        // gray: '',
-        // red: '',
-        // yellow: '',
-        // green: '',
-        // teal: '',
-        // indigo: '',
-        // purple: '',
-        // pink: '',
-      },
-    },
   },
+  // variants: ["responsive", "hover", "focus", "disabled"],
 };

@@ -1,11 +1,10 @@
 import React from 'react';
-import { ContactForm } from '../components';
+import Layout from '../components/layout';
 
 const Contact = () => (
-  <div className="container text-white flex flex-col lg:max-w-6xl mx-auto pb-16">
-    <h1 className="text-center text-white text-4xl">Contact me!</h1>
-    <ContactForm />
-  </div>
+  <Layout>
+    <h2>On the making!</h2>
+  </Layout>
 );
 
 export default Contact;

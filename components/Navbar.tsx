@@ -1,24 +1,37 @@
 import React from 'react';
 import Link from 'next/link';
 
-interface NavbarProps {
-  links: Array<{ href: string; name: string }>;
-}
+const links = [
+  {
+    text: 'Home',
+    href: '/',
+  },
+  {
+    text: 'Blog',
+    href: '/blog',
+  },
+  {
+    text: 'Contacto',
+    href: '/contact',
+  },
+  {
+    text: '/uses',
+    href: '/uses',
+  },
+];
 
-const Navbar = ({ links }: NavbarProps) => (
-  <div className="flex flex-wrap flex-row p-8 justify-center">
-    <ul className="list-none p-0 m-0 inline-flex flex-wrap w-full justify-center">
-      {links.map(link => (
-        <li className="p-2 ml-1" key={link.name}>
-          <Link href={link.href}>
-            <a className="font-semibold text-lg text-gray-100 hover:text-purple-400">
-              {link.name}
-            </a>
+const Navbar = () => (
+  <nav className="w-full border-b border-gray-200 px-8 py-6">
+    <ul className="w-full flex flex-row flex-wrap space-x-4">
+      {links.map(({ text, href }) => (
+        <li className="">
+          <Link href={href}>
+            <a className="text-gray-900 text-lg">{text}</a>
           </Link>
         </li>
       ))}
     </ul>
-  </div>
+  </nav>
 );
 
 export default Navbar;
